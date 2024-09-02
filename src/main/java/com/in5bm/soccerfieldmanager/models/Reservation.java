@@ -10,6 +10,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -30,6 +31,22 @@ public class Reservation implements Serializable {
 
     private Status status;
 
+
+    @ManyToOne
+    private User user;
+
+    @ManyToOne
+    private SoccerField soccerField;
+
+    //fetch: unir, relacionar
+    
+    /*
+     * fetch type Eager: Proceso los objetos de un solo
+     * fetch type Lazy: Procesa los objetos mas lentos
+     */
+
+     //@ManyToOne tiene por defecto fetch Eager
+     //@ManyToMany usa el fetch Lazy el cual solo devuelve el id
 
 
 }
