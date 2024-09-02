@@ -31,7 +31,8 @@ public class Reservation implements Serializable {
 
     private Status status;
 
-
+// Many clase donde la estoy creando
+//One donde esta enviandos
     @ManyToOne
     private User user;
 
@@ -39,7 +40,7 @@ public class Reservation implements Serializable {
     private SoccerField soccerField;
 
     //fetch: unir, relacionar
-    
+
     /*
      * fetch type Eager: Proceso los objetos de un solo
      * fetch type Lazy: Procesa los objetos mas lentos
