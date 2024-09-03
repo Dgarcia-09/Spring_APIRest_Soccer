@@ -4,11 +4,10 @@ import java.io.Serializable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Entity
@@ -23,8 +22,11 @@ public class User implements Serializable {
 
     @Id
     @Column(name="id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY) Un autoincrementable es sensible a ser heackeado
+    /*
+     * Hacer esto en entidades que posean informacion sensible del usuario
+     */
+    private String id;
 
     @Email(message = "Ingrese un email valido")
     @Column(unique = true, name = "email")
@@ -36,8 +38,11 @@ public class User implements Serializable {
 
     private String name;
     private String surname;
+
+    @NotBlank
     private String password;
-    private String urlProfilePhoto;
+
+    private String profilePhoto;
 
 
 }
