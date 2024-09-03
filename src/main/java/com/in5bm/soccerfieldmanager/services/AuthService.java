@@ -18,4 +18,9 @@ public class AuthService implements IAuthService{
         return authRepository.save(user);
     }
 
+    @Override 
+    public User login (String email){
+        return authRepository.findByEmail(email);
+    }
+
 }

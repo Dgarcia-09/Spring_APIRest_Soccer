@@ -6,4 +6,6 @@ import com.in5bm.soccerfieldmanager.models.User;
 
 public interface AuthRepository extends JpaRepository<User, String> {
 
+    User findByEmail(String email);
+
 }

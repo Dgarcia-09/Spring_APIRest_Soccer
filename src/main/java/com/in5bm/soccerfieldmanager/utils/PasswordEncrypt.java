@@ -8,5 +8,10 @@ public class PasswordEncrypt {
         
     }
 
+    public static boolean verifyPassword(String plainPassword, String encriptedPassword){
+        BCrypt.Result result = BCrypt.verifyer().verify(plainPassword.toCharArray(), encryptedPassword);
+        return result.verified;
+    }
+
 
 }
